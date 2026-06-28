@@ -10,8 +10,9 @@ The lab simulates a real-world enterprise environment with multiple departments,
 
 # Network Topology
 
-![Topology](Topology/Topology.png)
-
+<p align="center">
+  <img src="Topology/Topology.png" width="900">
+</p>
 ---
 
 # Technologies Used
