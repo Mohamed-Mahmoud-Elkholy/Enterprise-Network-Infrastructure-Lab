@@ -12,6 +12,22 @@
 </p>
 
 ---
+## Table of Contents
+
+- [Overview](#project-overview)
+- [Network Topology](#network-topology)
+- [Technologies Used](#technologies-used)
+- [Implemented Features](#implemented-features)
+- [VLAN Information](#vlan-information)
+- [High Availability](#high-availability)
+- [Dynamic Routing](#dynamic-routing)
+- [DHCP Services](#dhcp-services)
+- [Internet Connectivity](#internet-connectivity)
+- [Security](#security)
+- [Validation](#validation)
+- [Repository Structure](#repository-structure)
+- [Skills Demonstrated](#skills-demonstrated)
+- [Future Improvements](#future-improvements)
 
 ## Enterprise Network Topology
 
@@ -48,22 +64,6 @@ The project combines multiple CCNA and Enterprise Networking technologies into a
 ```
 
 ---
-## Table of Contents
-
-- [Overview](#project-overview)
-- [Network Topology](#network-topology)
-- [Technologies Used](#technologies-used)
-- [Implemented Features](#implemented-features)
-- [VLAN Information](#vlan-information)
-- [High Availability](#high-availability)
-- [Dynamic Routing](#dynamic-routing)
-- [DHCP Services](#dhcp-services)
-- [Internet Connectivity](#internet-connectivity)
-- [Security](#security)
-- [Validation](#validation)
-- [Repository Structure](#repository-structure)
-- [Skills Demonstrated](#skills-demonstrated)
-- [Future Improvements](#future-improvements)
 
 ---
 
