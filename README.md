@@ -1,10 +1,12 @@
 # Enterprise Network Infrastructure Lab
 
+# Enterprise Network Infrastructure Lab
+
 <p align="center">
 
 ![Cisco](https://img.shields.io/badge/Cisco-IOS-blue?style=for-the-badge&logo=cisco)
 ![GNS3](https://img.shields.io/badge/GNS3-Lab-red?style=for-the-badge)
-![Windows Server](https://img.shields.io/badge/Windows_Server-2019-0078D6?style=for-the-badge)
+![Windows Server](https://img.shields.io/badge/Windows_Server-2019-0078D7?style=for-the-badge)
 ![OSPF](https://img.shields.io/badge/OSPF-Dynamic_Routing-success?style=for-the-badge)
 ![HSRP](https://img.shields.io/badge/HSRP-High_Availability-orange?style=for-the-badge)
 ![DHCP](https://img.shields.io/badge/DHCP-Windows_Server-green?style=for-the-badge)
@@ -12,10 +14,11 @@
 </p>
 
 ---
+
 ## Table of Contents
 
-- [Overview](#project-overview)
-- [Network Topology](#network-topology)
+- [Project Overview](#project-overview)
+- [Enterprise Network Topology](#enterprise-network-topology)
 - [Technologies Used](#technologies-used)
 - [Implemented Features](#implemented-features)
 - [VLAN Information](#vlan-information)
@@ -29,10 +32,12 @@
 - [Skills Demonstrated](#skills-demonstrated)
 - [Future Improvements](#future-improvements)
 
+---
+
 ## Enterprise Network Topology
 
 <p align="center">
-<img src="Topology/Topology.png" width="1000">
+  <img src="Topology/Topology.png" alt="Enterprise Network Topology" width="100%">
 </p>
 
 ---
