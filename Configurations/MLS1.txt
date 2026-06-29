@@ -1,0 +1,221 @@
+MLS1#sh running-config
+Building configuration...
+
+Current configuration : 4456 bytes
+!
+! Last configuration change at 19:59:01 UTC Sun Jun 28 2026
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname MLS1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+logging discriminator EXCESS severity drops 6 msg-body drops EXCESSCOLL
+logging buffered 50000
+logging console discriminator EXCESS
+!
+no aaa new-model
+!
+!
+!
+!
+!
+no ip icmp rate-limit unreachable
+!
+!
+!
+no ip domain-lookup
+no ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+spanning-tree vlan 10,30,50 priority 24576
+spanning-tree vlan 20,40,60 priority 28672
+!
+vlan internal allocation policy ascending
+!
+ip tcp synwait-time 5
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Port-channel1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Ethernet0/0
+ no switchport
+ ip address 192.168.0.158 255.255.255.252
+!
+interface Ethernet0/1
+ no switchport
+ ip address 192.168.0.166 255.255.255.252
+!
+interface Ethernet0/2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Ethernet0/3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Ethernet1/0
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Ethernet1/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Ethernet1/2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Ethernet1/3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface Ethernet2/0
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface Ethernet2/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Ethernet2/2
+!
+interface Ethernet2/3
+!
+interface Ethernet3/0
+!
+interface Ethernet3/1
+!
+interface Ethernet3/2
+!
+interface Ethernet3/3
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ ip address 192.168.0.1 255.255.255.192
+ ip access-group HR in
+ ip helper-address 192.168.0.115
+ standby 10 ip 192.168.0.10
+ standby 10 priority 150
+ standby 10 preempt
+!
+interface Vlan20
+ ip address 192.168.0.65 255.255.255.224
+ ip access-group Finance in
+ ip helper-address 192.168.0.115
+ standby 20 ip 192.168.0.80
+ standby 20 preempt
+!
+interface Vlan30
+ ip address 192.168.0.97 255.255.255.240
+ ip helper-address 192.168.0.115
+ standby 30 ip 192.168.0.105
+ standby 30 priority 150
+ standby 30 preempt
+!
+interface Vlan40
+ ip address 192.168.0.113 255.255.255.240
+ ip helper-address 192.168.0.115
+ standby 40 ip 192.168.0.120
+ standby 40 preempt
+!
+interface Vlan50
+ ip address 192.168.0.129 255.255.255.248
+ ip access-group Wireless in
+ ip helper-address 192.168.0.115
+ standby 50 ip 192.168.0.132
+ standby 50 priority 150
+ standby 50 preempt
+!
+interface Vlan60
+ ip address 192.168.0.137 255.255.255.248
+ ip helper-address 192.168.0.115
+ standby 60 ip 192.168.0.140
+ standby 60 preempt
+!
+router ospf 1
+ network 192.168.0.156 0.0.0.3 area 0
+ network 192.168.0.164 0.0.0.3 area 0
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+ip access-list extended Finance
+ permit udp any eq bootpc any eq bootps
+ permit udp any eq bootps any eq bootpc
+ deny   ip 192.168.0.64 0.0.0.31 192.168.0.0 0.0.0.63
+ deny   ip 192.168.0.64 0.0.0.31 192.168.0.96 0.0.0.15
+ deny   ip 192.168.0.64 0.0.0.31 192.168.0.136 0.0.0.7
+ permit ip 192.168.0.64 0.0.0.31 192.168.0.112 0.0.0.15
+ permit ip 192.168.0.64 0.0.0.31 any
+ip access-list extended HR
+ permit udp any eq bootpc any eq bootps
+ permit udp any eq bootps any eq bootpc
+ deny   ip 192.168.0.0 0.0.0.63 192.168.0.64 0.0.0.31
+ deny   ip 192.168.0.0 0.0.0.63 192.168.0.96 0.0.0.15
+ deny   ip 192.168.0.0 0.0.0.63 192.168.0.136 0.0.0.7
+ permit ip 192.168.0.0 0.0.0.63 192.168.0.112 0.0.0.15
+ permit ip 192.168.0.0 0.0.0.63 any
+ip access-list extended Wireless
+ permit udp any eq bootpc any eq bootps
+ permit udp any eq bootps any eq bootpc
+ deny   ip 192.168.0.128 0.0.0.7 192.168.0.0 0.0.0.63
+ deny   ip 192.168.0.128 0.0.0.7 192.168.0.64 0.0.0.31
+ deny   ip 192.168.0.128 0.0.0.7 192.168.0.96 0.0.0.15
+ deny   ip 192.168.0.128 0.0.0.7 192.168.0.112 0.0.0.15
+ deny   ip 192.168.0.128 0.0.0.7 192.168.0.136 0.0.0.7
+ permit ip 192.168.0.128 0.0.0.7 any
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+!
+end
+
+MLS1#
