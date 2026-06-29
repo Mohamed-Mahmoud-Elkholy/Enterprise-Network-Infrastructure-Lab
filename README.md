@@ -222,18 +222,18 @@ README.md
 
 ---
 
-# Skills Demonstrated
+## Skills Demonstrated
 
 - Enterprise Network Design
-- Routing & Switching
-- Cisco IOS Configuration
+- Cisco Switching
+- Cisco Routing
+- Dynamic Routing (OSPF)
+- First Hop Redundancy (HSRP)
+- DHCP Relay
+- Network Address Translation (NAT/PAT)
+- Network Security (ACLs)
 - High Availability
-- Dynamic Routing
-- Network Security
-- Windows Server Administration
-- DHCP Deployment
-- Enterprise Troubleshooting
-
+- Troubleshooting
 ---
 
 # Future Improvements
