@@ -1,18 +1,52 @@
 # Enterprise Network Infrastructure Lab
 
-## Overview
+<p align="center">
 
-This project demonstrates the design and implementation of a complete Enterprise Network Infrastructure using Cisco IOS devices in GNS3 and Windows Server 2019.
+![Cisco](https://img.shields.io/badge/Cisco-IOS-blue?style=for-the-badge&logo=cisco)
+![GNS3](https://img.shields.io/badge/GNS3-Lab-red?style=for-the-badge)
+![Windows Server](https://img.shields.io/badge/Windows_Server-2019-0078D6?style=for-the-badge)
+![OSPF](https://img.shields.io/badge/OSPF-Dynamic_Routing-success?style=for-the-badge)
+![HSRP](https://img.shields.io/badge/HSRP-High_Availability-orange?style=for-the-badge)
+![DHCP](https://img.shields.io/badge/DHCP-Windows_Server-green?style=for-the-badge)
 
-The lab simulates a real-world enterprise environment with multiple departments, dynamic routing, gateway redundancy, centralized DHCP services, network security policies, and Internet connectivity.
+</p>
 
 ---
 
-# Network Topology
+## Enterprise Network Topology
 
 <p align="center">
-  <img src="Topology/Topology.png" width="900">
+<img src="Topology/Topology.png" width="1000">
 </p>
+
+---
+
+# Project Overview
+
+This project simulates a real-world enterprise network infrastructure using Cisco IOS devices in GNS3 integrated with Windows Server 2019.
+
+The environment was designed to demonstrate enterprise routing, switching, redundancy, centralized DHCP services, network segmentation, security policies, and Internet connectivity.
+
+The project combines multiple CCNA and Enterprise Networking technologies into a single integrated production-style topology.
+
+---
+
+# Enterprise Architecture
+
+```
+                    Internet
+                        │
+                     NAT Router
+                        │
+                 OSPF Core Routers
+                  /             \
+              MLS1             MLS2
+             / |  \           / |  \
+      Access Switches     Access Switches
+            │                 │
+        End Devices      Servers / APs
+```
+
 ---
 
 # Technologies Used
@@ -26,24 +60,36 @@ The lab simulates a real-world enterprise environment with multiple departments,
 
 # Implemented Features
 
+## Layer 2
+
 - VLAN Segmentation
-- Inter-VLAN Routing
 - VTP
 - Spanning Tree Protocol (STP)
 - EtherChannel
-- HSRP
-- OSPF
-- NAT Overload (PAT)
-- Windows Server DHCP
+
+## Layer 3
+
+- Inter-VLAN Routing
+- OSPF Dynamic Routing
+- HSRP First Hop Redundancy
+
+## Services
+
+- Windows Server 2019 DHCP
 - DHCP Relay (IP Helper)
+- NAT Overload (PAT)
+
+## Security
+
 - Extended ACLs
+- VLAN Isolation
 
 ---
 
 # VLAN Information
 
-| VLAN | Name | Subnet |
-|------|------|---------|
+| VLAN | Department | Network |
+|------|------------|----------------|
 |10|HR|192.168.0.0/26|
 |20|Finance|192.168.0.64/27|
 |30|IT|192.168.0.96/28|
@@ -55,9 +101,9 @@ The lab simulates a real-world enterprise environment with multiple departments,
 
 # High Availability
 
-Implemented using **HSRP** between two Multilayer Switches.
+Implemented HSRP between two Multilayer Switches.
 
-Features:
+Features
 
 - Active / Standby Gateway
 - Gateway Redundancy
@@ -68,9 +114,9 @@ Features:
 
 # Dynamic Routing
 
-Configured using **OSPF**.
+Implemented OSPF for routing between enterprise routers.
 
-Features:
+Features
 
 - Dynamic Route Exchange
 - Fast Convergence
@@ -78,42 +124,49 @@ Features:
 
 ---
 
-# DHCP
+# DHCP Services
 
-Windows Server 2019 provides:
+Windows Server 2019 provides
 
-- Centralized DHCP Service
+- Centralized DHCP
 - Multiple DHCP Scopes
 - DHCP Relay using IP Helper Address
 
 ---
 
-# NAT
+# Internet Connectivity
 
-Configured PAT (NAT Overload) to provide Internet connectivity for all internal VLANs.
+Internet access is provided through
+
+- NAT Overload (PAT)
+- Default Route Advertisement
+- Enterprise Edge Router
 
 ---
 
 # Security
 
-Implemented Extended ACLs to control communication between departments while allowing access to required enterprise services.
+Implemented Extended ACLs to restrict communication between departments while maintaining access to enterprise services.
 
 ---
 
 # Validation
 
-The following tests were successfully completed:
+The following functionality has been successfully tested.
 
 - DHCP Lease Assignment
 - Inter-VLAN Routing
 - HSRP Failover
 - OSPF Neighbor Adjacency
-- NAT Internet Access
-- ACL Verification
+- NAT Overload
+- Internet Connectivity
+- ACL Enforcement
+- STP Root Election
+- EtherChannel Operation
 
 ---
 
-# Project Structure
+# Repository Structure
 
 ```
 Configurations/
@@ -121,7 +174,36 @@ GNS3-Project/
 Topology/
 Verification/
 Windows-Server/
+README.md
 ```
+
+---
+
+# Skills Demonstrated
+
+- Enterprise Network Design
+- Routing & Switching
+- Cisco IOS Configuration
+- High Availability
+- Dynamic Routing
+- Network Security
+- Windows Server Administration
+- DHCP Deployment
+- Enterprise Troubleshooting
+
+---
+
+# Future Improvements
+
+- Multi-Area OSPF
+- Route Summarization
+- Stub Areas
+- IPv6
+- BGP
+- FortiGate Integration
+- Syslog Server
+- NTP Server
+- SNMP Monitoring
 
 ---
 
@@ -129,4 +211,6 @@ Windows-Server/
 
 **Mohamed Mahmoud Elkholy**
 
-Aspiring Network Engineer
+CCNA | Enterprise Networking | Windows Server
+
+Open to Networking & IT Infrastructure Opportunities.
