@@ -177,16 +177,37 @@ Implemented Extended ACLs to restrict communication between departments while ma
 
 The following functionality has been successfully tested.
 
-- DHCP Lease Assignment
-- Inter-VLAN Routing
-- HSRP Failover
-- OSPF Neighbor Adjacency
-- NAT Overload
-- Internet Connectivity
-- ACL Enforcement
-- STP Root Election
-- EtherChannel Operation
+## Validation Screenshots
 
+### HSRP
+
+<p align="center">
+  <img src="Screenshots/HSRP_MLS1.png" width="90%">
+</p>
+
+### OSPF
+
+<p align="center">
+  <img src="Screenshots/OSPF_R1.png" width="90%">
+</p>
+
+### NAT
+
+<p align="center">
+  <img src="Screenshots/NAT.png" width="90%">
+</p>
+
+### DHCP
+
+<p align="center">
+  <img src="Screenshots/DHCP.png" width="90%">
+</p>
+
+### ACL
+
+<p align="center">
+  <img src="Screenshots/ACL_MLS1.png" width="90%">
+</p>
 ---
 
 # Repository Structure
